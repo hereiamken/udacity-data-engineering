@@ -36,18 +36,18 @@ create_tables_task = PostgresOperator(
 )
 
 data_quality_checks = [
-    {'check': 'select count(*) from public.songplays where userid is null',
+    {'check_sql': 'select count(*) from public.songplays where userid is null',
      'expected': 0},
     {'check_sql': 'select count(*) from public.artists where name is null or artist_id is null',
-     'expected_result': 0},
+     'expected': 0},
     {'check_sql': 'select count(*) from public.songs where title is null or song_id is null',
-     'expected_result': 0},
+     'expected': 0},
     {'check_sql': 'select count(*) from public.users where first_name is null or userid is null',
-     'expected_result': 0},
-    {'check_sql': 'select count(*) from public."time" where weekday is null or ',
-     'expected_result': 0},
-    {'check_sql': 'select count(*) from public.songplays sp inner join public.users u on u.userid = sp.userid where u.userid is null',
-     'expected_result': 0}
+     'expected': 0},
+    {'check_sql': 'select count(*) from public."time" where weekday is null or start_time is null',
+     'expected': 0},
+    {'check_sql': 'select count(*) from public.songplays sp left join public.users u on u.userid = sp.userid where u.userid is null',
+     'expected': 0}
 ]
 
 start_operator = DummyOperator(task_id='Begin_execution', dag=dag)

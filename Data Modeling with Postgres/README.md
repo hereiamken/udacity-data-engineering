@@ -38,7 +38,7 @@ Using the song and log datasets, you'll need to create a star schema optimized f
 4. **etl.py** reads and processes files from song_data and log_data and loads them into tables. Fill this out based on work in the ETL notebook.
 5. **sql_queries.py** contains all sql queries, and is imported into files etl.py, etl.ipynb, create_tables.py.
 6. **README.md** provides discussion on project.
-8. **runner.py** provides running of **create_tables.py**, **etl.py** files in project. The first file must run in project, It will run **create_tables.py** first to generate fact table and dimension tables, then run **etl.py** to process handle preprocess data from directory and stores data to tables.
+8. **runner.ipynb** provides running of **create_tables.py**, **etl.py** files in project. The first file must run in project, It will run **create_tables.py** first to generate fact table and dimension tables, then run **etl.py** to process handle preprocess data from directory and stores data to tables.
 
 ### ETL Process
 1. First part, perform ETL on the first dataset song_data, to create the songs and artists dimensional tables. 

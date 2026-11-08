@@ -41,7 +41,7 @@ Using the song and log datasets, you'll need to create a star schema optimized f
 ### Description of files
 1. **etl.py** reads and processes files from song_data and log_data and loads them into tables. Load data from s3 and using spark to load them back into s3 datalake.
 2. **README.md** provides discussion on project.
-3. **df.cfg** provides all configs from for project.
+3. **dl.cfg** provides all configs from for project.
 
 ### How to run project.
 Please run file etl.py in command line by *run etl.py*
